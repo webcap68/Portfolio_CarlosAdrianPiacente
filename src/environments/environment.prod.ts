@@ -1,5 +1,6 @@
+
 export const environment = {
-  /*firebase: {
+  firebase: {
     projectId: 'frontendcap68',
     appId: '1:583069078605:web:02fb59b1c71530e7efb804',
     storageBucket: 'frontendcap68.appspot.com',
@@ -9,5 +10,5 @@ export const environment = {
     messagingSenderId: '583069078605',
   },
   production: true,
-  URL : 'http://localhost:8080/'*/
+  URL : 'https://backendcap.onrender.com/',
 };

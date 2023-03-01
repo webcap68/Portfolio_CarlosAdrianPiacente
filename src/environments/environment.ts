@@ -2,6 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
   firebase: {
     projectId: 'frontendcap68',
@@ -14,8 +15,8 @@ export const environment = {
   },
   production: false,
 
-  URL : 'http://localhost:8080/',
-  //URL : 'nube'
+  URL : 'https://backendcap.onrender.com/',
+  //URL : 'http://localhost:8080/',//
 };
 
 /*
