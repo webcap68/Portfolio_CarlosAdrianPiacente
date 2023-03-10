@@ -17,9 +17,10 @@
                 <div class="form-group">
                     <label for="url_foto">Imagen de perfil</label>
                     <input type="file" class="form-control" id="url_foto" name="url_foto" [(ngModel)]="persona.url_foto" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png , .web">
+                    
                 </div>
                 <div>
-                    <img [src]="imageService.url" alt="" width="200px">
+                    <img [src]="imageService.url" alt="" width="10%">
                 </div>
                 <br>
                 <button class="btn btn-primary">Actualizar datos</button>
