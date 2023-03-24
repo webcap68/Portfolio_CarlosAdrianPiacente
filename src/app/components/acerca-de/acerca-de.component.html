@@ -4,9 +4,10 @@
             <tr>
                 <td class="tdAcerca">
                     <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 botoneditarPerfil">
-                        <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged" >
-                            <i class="bi bi-pencil-fill"> </i> 
-                        </button>
+                        <!-- <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged" >
+                            
+                            <i class="bi bi-pencil-fill"></i>
+                        </button> -->
                     </div> 
                 </td>
                 <td>
@@ -34,8 +35,9 @@
         <img src={{persona?.url_foto}} class="img-fluid" id="fotodeperfil">
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nombreyapellido">
-        <h3 id="nombre">{{persona.nombre}}  {{persona.apellido}}</h3>
-        <h4>Full Stack Developer Jr.</h4>
+        <h4 id="nombre">{{persona.nombre}}  {{persona.apellido}}</h4>
+        <h5 id="titulo">Full Stack Developer Jr.</h5>
+         <a href="mailto:{{persona.email}}?Subject=Contacto"> <h6 id="email"> Informacion de contacto</h6></a>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 descripcion">
         <span>

@@ -1,1 +1,0 @@
-select count(id) from experiencia_laboral where persona_id=2

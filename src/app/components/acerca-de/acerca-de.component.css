@@ -93,6 +93,11 @@ div{
 }
 
 #nombre{
-    font-weight: bold;
+    font-weight:normal;
     color: #044cb8;
+}
+
+#titulo{
+    font-weight:normal;
+    color: #000000;
 }

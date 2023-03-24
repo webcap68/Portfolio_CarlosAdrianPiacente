@@ -10,3 +10,12 @@ div{
 h2,h3{
     display: inline;
 }
+
+td {
+        
+    width:100%; 
+}
+
+.botonagregar{
+    text-align: right;
+}
