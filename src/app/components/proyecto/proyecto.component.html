@@ -1,6 +1,18 @@
 <div class="row">
-    <h1>Proyectos Realizados</h1>
-    <div class="container">
+    <div class="encabezado">
+    <h2>Proyectos Realizados</h2>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <button
+          type="button"
+          class="btn btn-primary"
+          routerLink="/nuevopro"
+          *ngIf="isLogged"
+        >
+          <i class="bi bi-plus-lg"></i>
+        </button>
+      </div>
+    </div>
+    <!-- <div class="container">
         <h2>Gestión de actividades de pileta</h2>
         <div class="col-sm-12 col-md-7 col-lg-7 parte1">
             
@@ -11,5 +23,6 @@
         <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
             <img src="../../../assets/piletadefensores.png" class="img-fluid img-proyecto" alt="">
         </div>
-    </div>
+    </div> -->
+
 </div>
