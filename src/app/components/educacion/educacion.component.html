@@ -1,85 +1,47 @@
 <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-12" >
-        <table class="table2">
-            <tbody>
-                <tr>
-                    
-                    <td><h1>Educación</h1></td>
-                    <td><button  type="button" class="btn btn-primary botonagregar" routerLink="/nuevaedu" *ngIf="isLogged"   >
-                        <i class="bi bi-plus-lg"></i>
-            
-                    </button></td>
-                </tr>
-            </tbody>
-        </table>
-    
-        
+  <div class="encabezado">
+    <h2>Estudios Cursados</h2>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <button
+        type="button"
+        class="btn btn-primary"
+        routerLink="/nuevaedu"
+        *ngIf="isLogged"
+      >
+        <i class="bi bi-plus-lg"></i>
+      </button>
     </div>
-    <div class="col-sm-1 col-md-1 col-lg-1"></div>
-    <div class="col-sm-11 col-md-11 col-lg-11">
-        <table class="table">
-            <tbody>
-                <tr *ngFor="let Educacion of educacion">
-                    <td><h3>{{Educacion.nombreE}}</h3></td>
-                    <td>{{Educacion.descripcionE}}  </td>
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}"><i class="bi bi-pencil-fill"></i>
-                        </button>
-                    </td> 
-                    <td *ngIf="isLogged" >
-                        <button class="btn btn-danger" (click)="delete(Educacion.id)"><i class="bi bi-trash-fill"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
+  </div>
 
-
-        </table>
-    </div>
-
-
-
-
-
-
-
-
-
-<!--<div class="row">
-    <h1>Educación</h1>
-    <div class="col-lg-1"> </div>
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h2>4to Año de Ingenieria Electrónica</h2> - <h3>(years)</h3>
-            </li>
-            <p>Universidad Tecnológiva Nacional (UTN) - 1998</p>
-        </ul>
-        <ul>
-            <li>
-                <h2>Carrera CCNA Cisco Networking</h2> - <h3>(years)</h3>
-            </li>
-            <p>Cursada en la Escuela Militar - Av. Cabildo 56 - 2000 </p>
-        </ul>
-        <ul>
-            <li>
-                <h2>Administrador de servidor Linux</h2> - <h3>(years)</h3>
-            </li>
-            <p>Curso de armado y administración servidores Linux - MUV -Marcelo T de Alvear - 2005 </p>
-        </ul>
-        <ul>
-            <li>
-                <h2>Programador en Visual.Net</h2> - <h3>(years)</h3>
-            </li>
-            <p>Curso de programación en Visual.Net - MUV -Marcelo T de Alvear - 2006 </p>
-        </ul>
-        <ul>
-            <li>
-                <h2>Cisco IT Instructor</h2> - <h3>(years)</h3>
-            </li>
-            <p>Curso de instructor de IT de Cisco - INET - 2018 </p>
-        </ul>
-    </div>
+  <div class="col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-sm-11 col-md-11 col-lg-11">
+    <table class="table">
+      <tbody>
+       
+        <tr *ngFor="let Educacion of educacion" class="fila">
+          <td class="eduNombre">
+            <h5>{{ Educacion.nombreE }}</h5>
+          </td>
+          <td class="eduPeriodo">
+            <h6>{{ Educacion.inicio }} - {{ Educacion.fin }}</h6>
+          </td>
+          <td class="separador"></td>
+          <td class="eduDescripcion">{{ Educacion.descripcionE }}</td>
+          <td *ngIf="isLogged" class="eduEdit">
+            <button
+              class="btn btn-light"
+              routerLink="/editedu/{{ Educacion.id }}"
+            >
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </td>
+          <td *ngIf="isLogged" class="eduBorrar">
+            <button class="btn btn-danger" (click)="delete(Educacion.id)">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
--->
-

@@ -1,0 +1,49 @@
+
+
+label{
+    font-size: 1.1em;
+    color:midnightblue;
+}
+
+
+.botones{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+}
+
+form{
+    background-color: rgb(170, 208, 247);
+   
+}
+h2{
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+
+button{
+    width:25%;
+}
+
+.form-control{
+    margin:0px auto;
+    width: 75%;
+    
+}
+
+.form-outline{
+    
+    flex-wrap:wrap;
+}
+
+.card-header{
+    display: flex;
+    justify-content: flex-end;
+    
+  } 
+
+  .btn-close-white{
+    text-align: right;
+  }

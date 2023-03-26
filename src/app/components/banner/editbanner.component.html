@@ -1,35 +1,93 @@
-
-<form  [formGroup]="form"    (ngSubmit)="onUpdate($event)">
-<div class="container" *ngIf="banner">
-    <div class="row">
-        <div>
-            <!-- <form  [formGroup]="form"        (ngSubmit)="onUpdate()" novalidate #f="ngForm"> -->
-                
-                <!--<div class="form-group">
-                    <label for="nombreB">Nombre</label>
-                    <input type="text" class="form-control" id="nombreB" name="nombreB" [(ngModel)]="banner.nombreB" required>
-                </div>-->
-                
-                <div class="form-group">
-                    <label for="url_fotoB">Banner</label>
-                    <input type="file" class="form-control" formControlName="url_fotoB" id="url_fotoB" name="url_fotoB" [(ngModel)]="banner.url_fotoB" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png , .webp" [class.p]="urlInvalido">
-                </div>
-                <div *ngIf="URL?.errors && URL?.touched">
-                    <p *ngIf="URL?.hasError('required')" class="error">
-                        La url es un dato obligatorio
-
-                    </p>
-
-                </div>
-                <div>
-                    <!-- <img [src]="imageService.urlB" alt="" width="10%"> -->
-                </div>
-                <br>
-                <div  >
-                    <button type="submit" class="btn btn-primary">Actualizar</button>
-                </div>
-            
+<div class="container py-3 h-100" *ngIf="banner">
+  <div class="row d-flex justify-content-center align-items-center h-80">
+    <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+      <div class="card bg-primary text-white" style="border-radius: 1rem">
+        <div class="card-header">
+          <h3>Cambio de Banner</h3>
+          <button type="submit" class="btn btn-close-white" (click)="onClose()"  >
+            <i class="bi bi-x-lg"></i>
+          </button>
         </div>
+        <div class="card-block p-2 text-center">
+          <form [formGroup]="form" (ngSubmit)="onUpdate($event)">
+            <div>
+                <div class="form-outline mb-6">
+                    <label for="nombreB" class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="nombreB"
+                      name="nombreB"
+                      formControlName="nombreB"
+                      [(ngModel)]="banner.nombreB"                      
+                      required
+                      [ngClass]="{
+                        'is-invalid': submitted && f['nombreB'].errors,
+                        'is-valid': submitted && !f['nombreB'].errors
+                      }"
+                    />
+    
+                    <div
+                      *ngIf="f['nombreB'].errors && submitted"
+                      class="invalid-feedback"
+                    >                      
+                      <div
+                        *ngIf="f['nombreB'].errors['required']"
+                        class="alert alert-danger"
+                      >
+                        Dato requerido
+                      </div>
+                    </div>
+                  </div>
+              <div class="form-outline mb-6">
+                <label for="url_fotoB" class="form-label">Banner</label>
+                <input
+                  type="file"
+                  class="form-control form-control-lg"
+                  id="url_fotoB"
+                  name="url_fotoB"
+                  formControlName="url_fotoB"
+                  (change)="uploadImage($event)"
+                  accept=".jpg, .jpeg, .png"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && f['url_fotoB'].errors,
+                    'is-valid': submitted && !f['url_fotoB'].errors
+                  }"
+                />
+
+                <div
+                  *ngIf="f['url_fotoB'].errors && submitted"
+                  class="invalid-feedback"
+                >
+                  <!-- <div *ngIf="f['url_fotoB'].errors['touched']" class="alert alert-danger">
+                              La url es requerida
+                    </div>  -->
+                  <div
+                    *ngIf="f['url_fotoB'].errors['required']"
+                    class="alert alert-danger"
+                  >
+                    Los formatos para la imagen son JPG,JPEG y PNG
+                  </div>
+                </div>
+              </div>
+
+              <br />
+              <div class="form-outline mb-6">
+                <div class="botones">
+                  <button type="submit" class="btn btn-primary">
+                    Actualizar
+                  </button>
+                  <button class="btn btn-primary" (click)="onReset()">
+                    Limpiar
+                  </button>
+                </div>
+              </div>
+              <div><br /></div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-</div> 
-</form>
+  </div>
+</div>

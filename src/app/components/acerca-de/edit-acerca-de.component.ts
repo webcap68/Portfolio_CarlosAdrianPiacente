@@ -128,17 +128,20 @@ export class EditAcercaDeComponent implements OnInit {
      
   }
 
+  onClose(){
+    this.router.navigate(['']);
+  }
+
   uploadImage($event:any){
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;
-   
-    {
-        if ($event.target.files && $event.target.files[0]) {
+      if ($event.target.files && $event.target.files[0]) {
           let file = $event.target.files[0];
           console.log(file);
             if(file.type == "image/jpeg" || file.type == "image/jpg" || file.type == "image/png") {
               this.imageService.uploadImage($event, name);
               console.log("correct");
+              alert("se obtuvo la URL de la foto de perfil");
             }
             else {
               //call validation
@@ -148,7 +151,4 @@ export class EditAcercaDeComponent implements OnInit {
             }
         }
     }
-   
-  }
-
 }

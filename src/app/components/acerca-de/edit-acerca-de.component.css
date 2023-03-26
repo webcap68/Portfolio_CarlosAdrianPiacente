@@ -38,3 +38,12 @@ button{
     flex-wrap:wrap;
 }
 
+.card-header{
+    display: flex;
+    justify-content: flex-end;
+    /* align-items: flex-start;  */
+  } 
+
+  .btn-close-white{
+    text-align: right;
+  }

@@ -9,4 +9,79 @@ div{
 
 h2,h3{
     display: inline;
+    color: #0459da;
 }
+
+.encabezado{
+    display: flex;
+    
+}
+
+@media (min-width: 576px) {
+    .fila {
+      display: flex;
+      /* align-items por defecto tiene el valor `stretch` */
+      align-items: flex-start;
+    }
+    .expNombre {
+      width: 25%;
+    }
+    
+  
+    .expPeriodo {
+      width: 15%;
+    }
+  
+    
+    .separador {
+      width: 5%;
+    }
+  
+    
+    .expDescripcion {
+      width: 45%;
+    }
+  
+  
+    .expEdit {
+      width: 5%;
+    }
+  
+   
+    .expBorrar {
+      width: 5%;
+    }
+  
+  }
+
+@media (max-width: 575px) {
+    .fila {
+        display:flex;
+        /* align-items por defecto tiene el valor `stretch` */
+        align-items:flex-start;
+      }
+      .expNombre {
+        width: 6rem;
+      }
+    
+      .expPeriodo {
+        width: 2rem;
+      }
+    
+      .separador {
+        width: 2rem;
+      }
+      .expDescripcion {
+        width: 13rem;
+        height: auto;
+
+      }
+    
+      .expEdit {
+        width: 3rem;
+      }
+    
+      .expBorrar {
+        width: 3rem;
+      }
+    }

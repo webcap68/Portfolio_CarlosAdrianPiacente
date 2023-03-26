@@ -17,3 +17,25 @@ div{
     flex-direction: row;
     align-items: center;
 }
+
+h2,h3{
+    display: inline;
+    color: #0459da;
+    /* color: #bc2121 */
+}
+
+.encabezado{
+    display: flex;
+    
+    
+}
+
+.container{
+   
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        
+   
+}

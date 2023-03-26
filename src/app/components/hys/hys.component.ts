@@ -30,6 +30,7 @@ export class HysComponent implements OnInit {
         this.skill = data;
       }
     )
+    
   }
 
   delete(id : number) {

@@ -3,11 +3,14 @@
     <div class="col-12 col-md-8 col-lg-8 col-xl-6">
       <div class="card bg-primary text-white" style="border-radius: 1rem">
         <div class="card-header">
-          <h2>Editar Persona</h2>
+          <h3>Editar Persona</h3>
+          <button type="submit" class="btn btn-close-white" (click)="onClose()"  >
+            <i class="bi bi-x-lg"></i>
+          </button>
         </div>
         <!-- <div class="card-body p-5 text-center"> 
             <div class="mb-md-5 mt-md-4 pb-4">  -->
-        <div class="card-block p-3 text-center">
+        <div class="card-block p-2 text-center">
           <form [formGroup]="form" (ngSubmit)="onUpdate($event)">
             <div>
               <div class="form-outline mb-6">
@@ -19,6 +22,7 @@
                   name="nombre"
                   required
                   formControlName="nombre"
+                  [(ngModel)]="persona.nombre"
                   [ngClass]="{
                     'is-invalid': submitted && f['nombre'].errors,
                     'is-valid': !Nombre?.errors && Nombre?.touched
@@ -51,6 +55,7 @@
                   id="apellido"
                   name="apellido"
                   formControlName="apellido"
+                  [(ngModel)]="persona.apellido"
                   required
                   [ngClass]="{
                     'is-invalid': submitted && f['apellido'].errors,
@@ -84,6 +89,7 @@
                   id="email"
                   name="email"
                   formControlName="email"
+                  [(ngModel)]="persona.email"
                   required
                   [ngClass]="{
                     'is-invalid': submitted && f['email'].errors,
@@ -114,7 +120,7 @@
                   id="descripcion"
                   name="descripcion"
                   formControlName="descripcion"
-                  
+                  [(ngModel)]="persona.descripcion"
                   required
                   [ngClass]="{
                     'is-invalid': submitted && f['descripcion'].errors,

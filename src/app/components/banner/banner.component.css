@@ -4,7 +4,7 @@ img{
     color:  rgba(50,50,50,0.5);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
     /*border-radius: 15px;*/
-    filter: brightness(30%); 
+    /* filter: brightness(30%);  */
     opacity: 0.8 ;
 
 }

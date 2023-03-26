@@ -1,21 +1,91 @@
-.row{
-    padding: 20px;
+.row {
+  padding: 20px;
 }
 
-div{
-    /*background-color: rgb(198, 213, 228);*/
-    background-color:rgb(170, 208, 247);
+div {
+  /*background-color: rgb(198, 213, 228);*/
+  background-color: rgb(170, 208, 247);
 }
 
-h2,h3{
-    display: inline;
+h2,
+h3 {
+  display: inline;
+  color: #0459da;
 }
 
-td {
-        
-    width:100%; 
+.encabezado {
+  display: flex;
 }
 
-.botonagregar{
-    text-align: right;
+tr {
+  border-color: rgb(170, 208, 247);
+}
+
+@media (min-width: 576px) {
+  .fila {
+    display: flex;
+    /* align-items por defecto tiene el valor `stretch` */
+    align-items: flex-start;
+  }
+  .eduNombre {
+    width: 25%;
+  }
+  
+
+  .eduPeriodo {
+    width: 15%;
+  }
+
+  
+  .separador {
+    width: 5%;
+  }
+
+  
+  .eduDescripcion {
+    width: 45%;
+  }
+
+
+  .eduEdit {
+    width: 5%;
+  }
+
+ 
+  .eduBorrar {
+    width: 5%;
+  }
+
+}
+
+@media (max-width: 575px) {
+    .fila {
+        display:flex;
+        /* align-items por defecto tiene el valor `stretch` */
+        align-items:flex-start;
+      }
+      .eduNombre {
+        width: 6rem;
+      }
+    
+      .eduPeriodo {
+        width: 2rem;
+      }
+    
+      .separador {
+        width: 2rem;
+      }
+      .eduDescripcion {
+        width: 13rem;
+        height: auto;
+
+      }
+    
+      .eduEdit {
+        width: 3rem;
+      }
+    
+      .eduBorrar {
+        width: 3rem;
+      }
 }

@@ -10,7 +10,7 @@ td {
 @media (min-width: 576px){
     #fotodeperfil{
         /*position: absolute;*/
-         width: 85%; 
+         width: 90%; 
          border-radius: 100%;
          box-shadow: 5px 5px 5px rgb(94, 93, 93);
          /*left: 3%;
@@ -19,7 +19,13 @@ td {
     .descripcion{
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items:flex-start;
+        border-width: thin;
+        border-radius:1rem ;
+        border-color: #044cb8;
+        /* border-color: #e2dede; */
+        border-style: solid;;
+         
     }
     .nombreyapellido{
         display: flex;
@@ -94,10 +100,14 @@ div{
 
 #nombre{
     font-weight:normal;
-    color: #044cb8;
+    color: #0459da;
 }
 
 #titulo{
     font-weight:normal;
     color: #000000;
+}
+
+h2 {
+    color:#0459da;
 }
