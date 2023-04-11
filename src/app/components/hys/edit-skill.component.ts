@@ -29,14 +29,34 @@ export class EditSkillComponent implements OnInit {
       nombre:['',[Validators.required,Validators.minLength(2),Validators.maxLength(12)]]
     })
     const id = this.activatedRouter.snapshot.params['id'];
-    this.skillS.detail(id).subscribe(
-      data =>{
-        this.skill = data;
-      }, err=>{
-        alert("error al cargar la skill");
+    this.skillS.detail(id).subscribe({
+      next: (valor) => {
+        this.skill= valor;
+        console.log("carga exitosa",valor);
+        },
+      
+      error: (e) => {
+        console.log("algo salio mal",e);
+        if (e.error.status==400){
+          alert("error al cargar la skill");
+          this.onReset();
+        } else if (e.error.status==0){
+          alert("Error del cliente");
+        } else if (e.error.status==500){
+          alert("Error del servidor");
+        }
         this.router.navigate(['']);
-      }
-    );
+      },
+            
+       } );
+    
+      //  data =>{
+    //    this.skill = data;
+    //  }, err=>{
+    //    alert("error al cargar la skill");
+    //    this.router.navigate(['']);
+    //  }
+    //);
   }
 
   get f(): { [key: string]: AbstractControl } {
@@ -70,14 +90,37 @@ export class EditSkillComponent implements OnInit {
     if (this.submitted){
     const id= this.activatedRouter.snapshot.params['id'];
     this.skill = this.form.value;
-    this.skillS.update(id,this.skill).subscribe(
-      data =>{
+    this.skillS.update(id,this.skill).subscribe({
+
+      next: (data) => {
+        if(data.mensaje=="Skill actualizado"){
+          console.log("carga exitosa",data);
+          this.router.navigate(['']);
+        }
+       
+        },
+      
+      error: (e) => {
+        console.log("algo salio mal",e);
+        if (e.error.mensaje=="El skill ya existe"){
+          alert("El skill ya existe");
+          this.onReset();
+        } else if (e.error.status==0){
+          alert("Error del cliente");
+        } else if (e.error.status==500){
+          alert("Error del servidor");
+        }
         this.router.navigate(['']);
-      }, err =>{
-        alert("error al modificar la skill");
-        this.router.navigate(['']);
-      }
-    )
+      },
+
+      complete: () => console.log("finalizó el proceso de actualización"),
+      //data =>{
+      //  this.router.navigate(['']);
+      //}, err =>{
+      //  alert("error al modificar la skill");
+      //  this.router.navigate(['']);
+      //}
+    })
   }
 
 }

@@ -1,3 +1,4 @@
+<section class="gradient-custom">
 <div class="row">
     <div class="encabezado">
     <h2>Proyectos Realizados</h2>
@@ -12,6 +13,41 @@
         </button>
       </div>
     </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-sm-11 col-md-11 col-lg-11">
+    <table class="table">
+      <tbody>
+       <tr><br></tr>
+        <tr *ngFor="let Proyecto of proyecto" >
+          <td class="eduNombre">
+            <h5>{{ Proyecto.nombre }}</h5>
+            <h6>{{ Proyecto.ano }} </h6>
+          </td>
+          <td class="eduDescripcion">{{ Proyecto.descripcion }} </td>
+          <td class="eduUrl"><a  class="enlace" href={{Proyecto.url}} target="_blank">URL</a></td>
+          <!-- <td class="eduFoto"><img src={{Proyecto?.foto}} class="img-fluid" id="fotodeperfil"></td> -->
+          <td *ngIf="isLogged" class="eduEdit">
+            <button
+              class="btn btn-light"
+              routerLink="/editpro/{{ Proyecto.id }}"
+            >
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </td>
+          <td *ngIf="isLogged" class="eduBorrar">
+            <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
     <!-- <div class="container">
         <h2>Gestión de actividades de pileta</h2>
         <div class="col-sm-12 col-md-7 col-lg-7 parte1">
@@ -25,4 +61,4 @@
         </div>
     </div> -->
 
-</div>
+

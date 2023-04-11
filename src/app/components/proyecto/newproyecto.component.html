@@ -1,0 +1,188 @@
+<div class="container py-3 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-80">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="card bg-primary text-white" style="border-radius: 1rem">
+          <div class="card-header">
+            <h3>Nuevo Proyecto</h3>
+            <button type="submit" class="btn btn-close-white" (click)="onClose()">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="card-block p-2 text-center">
+            <form [formGroup]="form" (ngSubmit)="onCreate($event)">
+              <div>
+                <div class="form-outline mb-6">
+                  <label for="nombre">Nombre del Proyecto</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    id="nombre"
+                    name="nombre"
+                    formControlName="nombre"
+                    required
+                    [ngClass]="{
+                      'is-invalid': submitted && f['nombre'].errors,
+                      'is-valid': !Nombre?.errors && Nombre?.touched
+                    }"
+                  />
+                  <div
+                    *ngIf="f['nombre'].errors && submitted"
+                    class="invalid-feedback"
+                  >
+                    <div
+                      *ngIf="f['nombre'].errors['required']"
+                      class="alert alert-danger"
+                    >
+                      El nombre es requerido
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-outline mb-6">
+                  <label for="descripcion">Descripción</label>
+                  <textarea  class="form-control form-control-lg" wrap="hard"
+                  id="descripcion"
+                  name="descripcion"
+                  formControlName="descripcion"
+                  placeholder="Ingrese el texto de descripcion"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && f['descripcion'].errors,
+                    'is-valid': !Descripcion?.errors && Descripcion?.touched
+                  }" rows="5" cols="50" spellcheck="true"></textarea>
+                  
+                  
+                  <div
+                    *ngIf="f['descripcion'].errors && submitted"
+                    class="invalid-feedback"
+                  >
+                    <div
+                      *ngIf="Descripcion?.hasError('required')"
+                      class="alert alert-danger"
+                    >
+                      El dato de la descripción es requerido
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <!-- <div class="form-outline mb-6">
+                    <label for="foto" class="form-label"
+                      >Imagen de perfil</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control form-control-lg"
+                      id="foto"
+                      name="foto"
+                      formControlName="foto"
+                      (change)="uploadImage($event)"
+                      accept=".jpg, .jpeg, .png"
+                      required
+                      [ngClass]="{
+                        'is-invalid': submitted && f['foto'].errors,
+                        'is-valid': submitted && !f['foto'].errors
+                      }"
+                    />
+    
+                    <div
+                      *ngIf="f['foto'].errors && submitted"
+                      class="invalid-feedback"
+                    >
+              
+                      <div
+                        *ngIf="f['foto'].errors['required']"
+                        class="alert alert-danger"
+                      >
+                        Los formatos para la imagen son JPG,JPEG y PNG
+                      </div>
+                    </div>
+                  </div> -->
+  
+                <div class="form-outline mb-6">
+                  <label for="ano" class="form-label">Año de creación</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    id="ano"
+                    name="ano"
+                    formControlName="ano"
+                    required
+                    [ngClass]="{
+                      'is-invalid': submitted && f['ano'].errors,
+                      'is-valid': !Ano?.errors && Ano?.touched
+                    }"
+                  />
+                  <div
+                    *ngIf="f['ano'].errors && submitted"
+                    class="invalid-feedback"
+                  >
+                    <div
+                      *ngIf="Ano?.hasError('required')"
+                      class="alert alert-danger"
+                    >
+                      El año de creación es requerido
+                    </div>
+                    <div
+                      *ngIf="Ano?.hasError('min')"
+                      class="alert alert-danger"
+                    >
+                      El año de creación debe ser mayor a 1980
+                    </div>
+                    <div
+                      *ngIf="Ano?.hasError('max')"
+                      class="alert alert-danger"
+                    >
+                      El año de creación debe ser menor a 2024
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-outline mb-6">
+                    <label for="url">Url</label>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="url"
+                      name="url"
+                      formControlName="url"
+                      required
+                      [ngClass]="{
+                        'is-invalid': submitted && f['url'].errors,
+                        'is-valid': !Url?.errors && Url?.touched
+                      }"
+                    />
+                    <div
+                      *ngIf="f['url'].errors && submitted"
+                      class="invalid-feedback"
+                    >
+                      <div
+                        *ngIf="Url?.hasError('required')"
+                        class="alert alert-danger"
+                      >
+                        El dato de la url es requerido
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                <br />
+  
+                <div class="form-outline mb-6">
+                  <div class="botones">
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+  
+                    <button class="btn btn-primary" (click)="onReset()">
+                      Limpiar
+                    </button>
+                  </div>
+                </div>
+                <div><br /></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

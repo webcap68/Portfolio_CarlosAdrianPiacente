@@ -1,0 +1,202 @@
+<div class="container py-3 h-100" *ngIf="proyecto">
+  <div class="row d-flex justify-content-center align-items-center h-80">
+    <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+      <div class="card bg-primary text-white" style="border-radius: 1rem">
+        <div class="card-header">
+          <h3>Editar Proyecto</h3>
+          <button type="submit" class="btn btn-close-white" (click)="onClose()"  >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="card-block p-2 text-center">
+          <form [formGroup]="form" (ngSubmit)="onUpdate($event)">
+            <div>
+              <div class="form-outline mb-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  formControlName="nombre"
+                  [(ngModel)]="proyecto.nombre"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['nombre'].errors,
+                    'is-valid': !Nombre?.errors && Nombre?.touched
+                  }"
+                />
+                <div
+                  *ngIf="f['nombre'].errors && submitted"
+                  class="invalid-feedback"
+                >
+                  <!-- <div *ngIf="Nombre?.errors && Nombre?.touched"> -->
+                  <div
+                    *ngIf="f['nombre'].errors['required']"
+                    class="alert alert-danger"
+                  >
+                    El nombre es requerido
+                  </div>
+                  <div
+                    *ngIf="Nombre?.hasError('minlength')"
+                    class="alert alert-danger"
+                  >
+                    El nombre debe tener al menos 8 caracteres
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-6">
+                <label for="descripcion" class="form-label">Descripción del proyecto</label>
+                
+                <textarea  class="form-control form-control-lg" wrap="hard"
+                id="descripcion"
+                name="descripcion"
+                formControlName="descripcion"
+                [(ngModel)]="proyecto.descripcion"
+                required
+                [ngClass]="{
+                  'is-invalid': submitted && f['descripcion'].errors,
+                  'is-valid': !Descripcion?.errors && Descripcion?.touched
+                }" rows="5" cols="50" spellcheck="true"></textarea>
+                
+                <div
+                  *ngIf="f['descripcion'].errors && submitted"
+                  class="invalid-feedback"
+                >
+                  <div
+                    *ngIf="Descripcion?.hasError('required')"
+                    class="alert alert-danger"
+                  >
+                    El dato es requerido
+                  </div>
+                  
+                </div>
+              </div>
+
+              <!-- <div class="form-outline mb-6">
+                <label for="foto" class="form-label"
+                  >Imagen del proyecto</label
+                >
+                <input
+                  type="file"
+                  class="form-control form-control-lg"
+                  id="foto"
+                  name="foto"
+                  formControlName="foto"
+                  (change)="uploadImage($event)"
+                  accept=".jpg, .jpeg, .png"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && f['foto'].errors,
+                    'is-valid': submitted && !f['foto'].errors
+                  }"
+                />
+                <div
+                  *ngIf="f['foto'].errors && submitted"
+                  class="invalid-feedback"
+                >
+                 
+                  <div
+                    *ngIf="f['foto'].errors['required']"
+                    class="alert alert-danger"
+                  >
+                    Los formatos para la imagen son JPG,JPEG y PNG
+                  </div>
+                </div>
+            </div> -->
+
+              <div class="form-outline mb-6">
+                <label for="url" class="form-label">URL</label>
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  id="url"
+                  name="url"
+                  formControlName="url"
+                  [(ngModel)]="proyecto.url"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && f['url'].errors,
+                    'is-valid': !Url?.errors && Url?.touched
+                  }"
+                />
+                <div
+                  *ngIf="f['url'].errors && submitted"
+                  class="invalid-feedback"
+                >                  
+                  <div
+                    *ngIf="Url?.hasError('required')"
+                    class="alert alert-danger"
+                  >
+                    La URL es requerida
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="form-outline mb-6">
+                <label for="ano" class="form-label">Año de creación)</label>
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  id="ano"
+                  name="ano"
+                  formControlName="ano"
+                  [(ngModel)]="proyecto.ano"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && f['ano'].errors,
+                    'is-valid': !Ano?.errors && Ano?.touched
+                  }"
+                />
+                <div
+                  *ngIf="f['ano'].errors && submitted"
+                  class="invalid-feedback"
+                >                  
+                  <div
+                    *ngIf="Ano?.hasError('required')"
+                    class="alert alert-danger"
+                  >
+                    El año es requerido
+                  </div>
+                  <div
+                      *ngIf="Ano?.hasError('min')"
+                      class="alert alert-danger"
+                    >
+                      El año  debe ser mayor a 1980
+                    </div>
+                    <div
+                      *ngIf="Ano?.hasError('max')"
+                      class="alert alert-danger"
+                    >
+                      El año  debe ser menor a 2024
+                    </div>
+                </div>
+              </div>
+              
+              
+              
+
+              <br />
+              <div class="form-outline mb-6">
+                <div class="botones">
+                  <button type="submit" class="btn btn-primary">
+                    Actualizar
+                  </button>
+
+                  <button class="btn btn-primary" (click)="onReset()">
+                    Limpiar
+                  </button>
+                </div>
+               
+              </div>
+              <div><br /></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

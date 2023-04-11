@@ -57,17 +57,29 @@ export class NewSkillComponent implements OnInit {
 
     if (this.submitted){
     const skill = this.form.value;
-    this.skillS.save(skill).subscribe(
-      data=> {
-        
-        this.router.navigate(['']);
-      }, err =>{
-        alert("Falló al crear el Skill. Ya existe");
-        this.router.navigate(['']);
-      }
-      
+    this.skillS.save(skill).subscribe({
 
-    )
+    next: (data) => {
+      console.log("guardado exitosamente",data);
+      if (data.mensaje=="Skill agregado al portfolio"){
+          this.router.navigate(['']);
+      }
+    },
+    error: (e) => {
+      console.log("algo salio mal",e);
+      if (e.error.mensaje=="El skill ya existe"){
+        alert("El skill ya existe");
+        this.onReset();
+      } else if (e.error.status==0){
+        alert("Error del cliente");
+      } else if (e.error.status==500){
+        alert("Error del servidor");
+      }
+    },
+    complete: () => console.log("finalizó el proceso de alta del skill"),
+    
+     } );
+     
   }
 
 }

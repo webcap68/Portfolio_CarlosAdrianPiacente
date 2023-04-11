@@ -35,7 +35,8 @@ export class EditAcercaDeComponent implements OnInit {
       nombre:['',[Validators.required,Validators.minLength(2)]],
       apellido:['',[Validators.required,Validators.minLength(2)]],
       email:['',[Validators.required,Validators.email]],
-      descripcion:['',[Validators.required,Validators.maxLength(255)]]
+      //descripcion:['',[Validators.required,Validators.maxLength(255)]]
+      descripcion:['',[Validators.required]]
     })
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaService.detail(id).subscribe(

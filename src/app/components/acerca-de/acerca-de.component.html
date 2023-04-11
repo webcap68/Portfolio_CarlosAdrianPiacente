@@ -1,48 +1,71 @@
-<div class="row" *ngIf="persona">
-    <table class="table">
-        <tbody>
-            <tr>
-                <td class="tdAcerca">
-                    <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 botoneditarPerfil">
-                        <!-- <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged" >
-                            
-                            <i class="bi bi-pencil-fill"></i>
-                        </button> -->
-                    </div> 
-                </td>
-                <td>
-                    <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 botoneditarNombre">
-                        <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged" >
-                            <i class="bi bi-pencil-fill"> </i> 
-                        </button>
-                    </div>   
-
-                </td>
-                <td>  <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 botoneditarAcerca">
-                        <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged" >
-                            <i class="bi bi-pencil-fill"> </i> 
-                        </button>
-                    </div>  
-                </td> 
-               
-            </tr>
-        </tbody>
-    </table>
-     
-      
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"> 
+<section class="gradient-custom">
+  <div class="row" *ngIf="persona">
+    <div class="datospersona">
+      <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 foto">
         <!--<img src="/frontendCAP/src/assets/perfil.png" class="img-fluid"  id="fotodeperfil">-->
-        <img src={{persona?.url_foto}} class="img-fluid" id="fotodeperfil">
+        <img
+          src="{{ persona?.url_foto }}"
+          class="img-fluid"
+          id="fotodeperfil"
+        />
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 nombreyapellido">
+        <br />
+        <h4 id="nombre">{{ persona.nombre }} {{ persona.apellido }}</h4>
+        <h6 id="titulo">Full Stack Developer Jr.</h6>
+        <span id="email"
+          ><a class="mail" href="mailto:{{ persona.email }}?Subject=Contacto">{{
+            persona.email
+          }}</a></span
+        >
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 botoneditarNombre">
+        <button
+          type="button"
+          class="btn btn-light"
+          routerLink="/editacercade/1"
+          *ngIf="isLogged"
+        >
+          <i class="bi bi-pencil-fill"> </i>
+        </button>
+      </div>
+      <br /><br />
     </div>
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nombreyapellido">
-        <h4 id="nombre">{{persona.nombre}}  {{persona.apellido}}</h4>
-        <h5 id="titulo">Full Stack Developer Jr.</h5>
-         <a href="mailto:{{persona.email}}?Subject=Contacto"> <h6 id="email"> Informacion de contacto</h6></a>
+
+    <div class="acercademi">
+      <div class="encabezado">
+        <h2>Acerca de mí</h2>
+        
+      </div>
+      <div class="col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="col-sm-11 col-md-11 col-lg-11">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td class="separador"></td>
+              <td class="descripcion">
+                <span>
+                  <p>{{ persona.descripcion }}</p>
+                </span>
+              </td>
+              <td class="separador2"></td>
+              <td class="botoneditarAcerca">
+                <div >
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    routerLink="/editsobremi/1"
+                    *ngIf="isLogged"
+                  >
+                    <i class="bi bi-pencil-fill"> </i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 descripcion">
-        <span>
-            <h2>Acerca de mí</h2>
-            <p>{{persona.descripcion}}</p> 
-        </span>
-    </div>
-</div>
+    
+  </div>
+</section>

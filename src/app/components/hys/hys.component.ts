@@ -35,13 +35,28 @@ export class HysComponent implements OnInit {
 
   delete(id : number) {
     if(id != undefined){
-      this.skillS.delete(id).subscribe(
-        data =>{
-          this.cargarSkills();  
-        }, err =>{
-          alert("no se pudo borrar la skill");
-        }
-        )
+      this.skillS.delete(id).subscribe({
+        next: (data) => {
+                  
+          if (data.mensaje=="Skill eliminada exitosamente"){
+            console.log("Skill eliminada exitosamente",data);
+            this.cargarSkills();
+          }
+        },
+        error: (e) => {
+          console.log("algo salio mal",e);
+          if (e.error.mensaje=="El ID no existe"){
+            alert("El ID del Skill no existe");
+            } else if (e.error.status==0){
+            alert("Error del cliente");
+          } else if (e.error.status==500){
+            alert("Error del servidor");
+          }
+        },
+        complete: () => console.log("finalizó el proceso de eliminación"),
+        
+      } );
+            
     }
   }
 

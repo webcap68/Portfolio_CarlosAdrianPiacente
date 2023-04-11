@@ -1,0 +1,71 @@
+<div class="container py-3 h-100" *ngIf="persona">
+    <div class="row d-flex justify-content-center align-items-center h-80">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="card bg-primary text-white" style="border-radius: 1rem">
+          <div class="card-header">
+            <h3>Editar Acerca de Mi</h3>
+            <button type="submit" class="btn btn-close-white" (click)="onClose()"  >
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <!-- <div class="card-body p-5 text-center"> 
+              <div class="mb-md-5 mt-md-4 pb-4">  -->
+          <div class="card-block p-2 text-center">
+            <form [formGroup]="form" (ngSubmit)="onUpdate($event)">
+              <div>
+                
+             
+                <div class="form-outline mb-6">
+                  <label for="descripcion" class="form-label">Acerca de mi</label>
+                  
+                  <!-- <input type="text"   />                -->
+                  <textarea type="text" class="form-control form-control-lg" 
+                  id="descripcion"
+                  name="descripcion"
+                  formControlName="descripcion"
+                  [(ngModel)]="persona.descripcion"
+                  required
+                  [ngClass]="{
+                    'is-invalid': submitted && f['descripcion'].errors,
+                    'is-valid': !Descripcion?.errors && Descripcion?.touched
+                  }" rows="5" cols="50" spellcheck="true"></textarea>
+  
+                  <!-- <div *ngIf="Descripcion?.errors && Descripcion?.touched"> -->
+                  <div
+                    *ngIf="f['descripcion'].errors && submitted"
+                    class="invalid-feedback"
+                  >
+                    <div
+                      *ngIf="Descripcion?.hasError('required')"
+                      class="alert alert-danger"
+                    >
+                      El dato es requerido
+                    </div>
+                  
+                  </div>
+                </div>
+                
+  
+                <br />
+                <div class="form-outline mb-6">
+                  <div class="botones">
+                    <button type="submit" class="btn btn-primary">
+                      Actualizar
+                    </button>
+  
+                    <button class="btn btn-primary" (click)="onReset()">
+                      Limpiar
+                    </button>
+                  </div>
+                  <!-- btn btn-primary  -->
+                  <!-- btn btn-secondary -->
+                </div>
+                <div><br /></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,40 +1,116 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  /* background: #6a11cb; */
 
-.row{
-    padding: 20px;
-    /*background-color:rgb(198, 213, 228) ;*/
-    background-color:rgb(170, 208, 247);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(170, 208, 247),
+    rgb(77, 140, 248)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248));
+}
+.row {
+  padding: 20px;
+}
+td {
+  border-style: none;
+  border-color: #044cb8;
 }
 
-.container{
-    width: auto;
-    
-    
-    
+.encabezado{
+  display: flex;
+  
 }
-.parte1, .parte2{
-    display: inline-block;
+div {
+  /*background-color: rgb(198, 213, 228);*/
+  /* background-color: rgb(170, 208, 247); */
+}
+
+h2,
+h3 {
+  display: inline;
+  color: #0459da;
+}
+
+.encabezado {
+  display: flex;
+}
+
+.enlace {
+  color: rgb(47, 3, 78);
+}
+
+@media (min-width: 576px) {
+  .fila {
+    display: flex;
+    /* align-items por defecto tiene el valor `stretch` */
+    align-items: flex-start;
+  }
+  .eduNombre {
+    width: 15%;
+    text-align: center;
+    color: rgb(47, 3, 78);
+  }
+
+  .eduDescripcion {
+    width: 45%;
     text-align: justify;
+    color: rgb(47, 3, 78);
+  }
+  .eduUrl {
+    width: 30%;
+    text-align: center;
+  }
+  /* .eduFoto {
+        width: 0%;
+        box-shadow: 10px 10px 15px #000000;
+      } */
+
+  .eduEdit {
+    width: 5%;
+  }
+
+  .eduBorrar {
+    width: 5%;
+  }
 }
-.img-proyecto{
-    box-shadow: 10px 10px 30px #000000;
+
+@media (max-width: 575px) {
+  .fila {
+    display: flex;
+    /* align-items por defecto tiene el valor `stretch` */
+    align-items:flex-start;
+  }
+  .eduNombre {
+    width: 5rem;
+    color: rgb(47, 3, 78);
+  }
+  .eduUrl {
+    width: 5rem;
+    color: rgb(47, 3, 78);
+    word-wrap: break-word;
+  }
+  .enlace{
+    word-wrap: break-word;
+  }
+
+  .eduDescripcion {
+    width: 13rem;
+    height: auto;
+    color: rgb(47, 3, 78);
+  }
+
+  .eduEdit {
+   
+
+   width: 3rem;
+  }
+
+  .eduBorrar {
+    
+    width: 3rem;
+  }
 }
-@media (min-width: 769px){
-    .img-proyecto{
-        position: relative;
-         /*width: 40%; 
-         border-radius: 100%;
-         box-shadow: 3px 3px 3px grey;
-         left: 3%;*/
-         top: -100px;
-    }
-}
-/*@media (max-width: 770px){
-    .img-proyecto{
-        position: relative;
-         width: 40%; 
-         border-radius: 100%;
-         box-shadow: 3px 3px 3px grey;
-         left: 3%;
-         top: 0px;
-    }
-}*/

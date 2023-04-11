@@ -28,6 +28,10 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { EditbannerComponent } from './components/banner/editbanner.component';
+import { NewproyectoComponent } from './components/proyecto/newproyecto.component';
+import { EditproyectoComponent } from './components/proyecto/editproyecto.component';
+import { SobremiComponent } from './components/acerca-de/sobremi.component';
+
 
 @NgModule({
   declarations: [
@@ -50,8 +54,11 @@ import { EditbannerComponent } from './components/banner/editbanner.component';
     EditSkillComponent,
     NewSkillComponent,
     EditAcercaDeComponent,
-    EditbannerComponent
-  ],
+    EditbannerComponent,
+    NewproyectoComponent,
+    EditproyectoComponent,
+SobremiComponent    
+    ],
   imports: [
     BrowserModule,
     FormsModule,
