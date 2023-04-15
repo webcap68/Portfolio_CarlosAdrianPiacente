@@ -14,6 +14,7 @@ import { EditproyectoComponent } from './components/proyecto/editproyecto.compon
 import { NewproyectoComponent } from './components/proyecto/newproyecto.component';
 import { SobremiComponent } from './components/acerca-de/sobremi.component' ;
 
+
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'login', component: LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'editpro/:id', component: EditproyectoComponent },
   {path: 'nuevopro', component: NewproyectoComponent},
   {path: 'editsobremi/:id', component: SobremiComponent}
+
 ];
 
 @NgModule({

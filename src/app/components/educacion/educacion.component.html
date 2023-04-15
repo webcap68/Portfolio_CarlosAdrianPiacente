@@ -1,8 +1,10 @@
 <section class="gradient-custom">
 <div class="row">
+ 
   <div class="encabezado">
     <h2>Estudios Cursados</h2>
     <div class="col-sm-2 col-md-2 col-lg-2">
+
       <button
         type="button"
         class="btn btn-primary"
@@ -10,12 +12,16 @@
         *ngIf="isLogged"
       >
         <i class="bi bi-plus-lg"></i>
+
       </button>
+     
     </div>
   </div>
 
   <div class="col-sm-1 col-md-1 col-lg-1"></div>
   <div class="col-sm-11 col-md-11 col-lg-11">
+    <!-- <button>Abrir modal</button> -->
+    <app-modalneweducacion></app-modalneweducacion>
     <table class="table">
       <tbody>
        

@@ -31,6 +31,8 @@ import { EditbannerComponent } from './components/banner/editbanner.component';
 import { NewproyectoComponent } from './components/proyecto/newproyecto.component';
 import { EditproyectoComponent } from './components/proyecto/editproyecto.component';
 import { SobremiComponent } from './components/acerca-de/sobremi.component';
+import { ModalneweducacionComponent } from './components/modalneweducacion/modalneweducacion.component';
+
 
 
 @NgModule({
@@ -57,7 +59,8 @@ import { SobremiComponent } from './components/acerca-de/sobremi.component';
     EditbannerComponent,
     NewproyectoComponent,
     EditproyectoComponent,
-SobremiComponent    
+SobremiComponent,
+ModalneweducacionComponent
     ],
   imports: [
     BrowserModule,
