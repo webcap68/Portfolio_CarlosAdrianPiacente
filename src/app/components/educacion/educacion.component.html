@@ -1,55 +1,60 @@
 <section class="gradient-custom">
-<div class="row">
- 
-  <div class="encabezado">
-    <h2>Estudios Cursados</h2>
-    <div class="col-sm-2 col-md-2 col-lg-2">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 encabezado">
+      <div class="icono">
+        <h2>Estudios Cursados</h2>
+        <i class="fa-solid fa-book" style="color: #044cb8"></i>
+      </div>
+      <div class="btnadd">
+        <button
+          type="button"
+          class="btn btn-primary"
+          *ngIf="isLogged"
+          (click)="NuevaEdu()"
+        >
+          <i class="bi bi-plus-circle"></i>
+        </button>
+      </div>
+    </div>
 
-      <button
-        type="button"
-        class="btn btn-primary"
-        routerLink="/nuevaedu"
-        *ngIf="isLogged"
-      >
-        <i class="bi bi-plus-lg"></i>
-
-      </button>
-     
+    <div class="col-sm-1 col-md-1 col-lg-1"></div>
+    <div class="col-sm-11 col-md-11 col-lg-11">
+      <table class="table">
+        <tbody
+          style="border-color: rgb(0, 53, 142)"
+          *ngFor="let Educacion of educacion"
+        >
+          <tr>
+            <td class="eduNombre">
+              {{ Educacion.descripcionE }}
+            </td>
+            <td *ngIf="isLogged" class="eduEdit">
+              <button
+                class="btn btn-light"
+                routerLink="/editedu/{{ Educacion.id }}"
+              >
+                <i class="bi bi-pencil-fill"></i>
+              </button>
+            </td>
+            <td *ngIf="isLogged" class="eduBorrar">
+              <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="eduPeriodo">
+              <p class="nombreE">{{ Educacion.nombreE }}</p>
+              {{ Educacion.inicio }} - {{ Educacion.fin }}
+            </td>
+          </tr>
+          <!-- <tr>
+          <td class="col eduDescripcion">
+            {{ Educacion.descripcionE }}
+          </td>
+        </tr> -->
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <div class="col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-sm-11 col-md-11 col-lg-11">
-    <!-- <button>Abrir modal</button> -->
-    <app-modalneweducacion></app-modalneweducacion>
-    <table class="table">
-      <tbody>
-       
-        <tr *ngFor="let Educacion of educacion" >
-          <td class="eduNombre">
-            <h5>{{ Educacion.nombreE }}</h5>
-          </td>
-          <td class="eduPeriodo">
-            <h6>{{ Educacion.inicio }} - {{ Educacion.fin }}</h6>
-          </td>
-          <td class="separador"></td>
-          <td class="eduDescripcion">{{ Educacion.descripcionE }}</td>
-          <td *ngIf="isLogged" class="eduEdit">
-            <button
-              class="btn btn-light"
-              routerLink="/editedu/{{ Educacion.id }}"
-            >
-              <i class="bi bi-pencil-fill"></i>
-            </button>
-          </td>
-          <td *ngIf="isLogged" class="eduBorrar">
-            <button class="btn btn-danger" (click)="delete(Educacion.id)">
-              <i class="bi bi-trash-fill"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 </section>

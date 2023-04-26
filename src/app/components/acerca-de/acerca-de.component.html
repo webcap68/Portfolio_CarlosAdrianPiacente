@@ -2,7 +2,7 @@
   <div class="row" *ngIf="persona">
     <div class="datospersona">
       <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 foto">
-        <!--<img src="/frontendCAP/src/assets/perfil.png" class="img-fluid"  id="fotodeperfil">-->
+        
         <img
           src="{{ persona?.url_foto }}"
           class="img-fluid"
@@ -29,12 +29,19 @@
           <i class="bi bi-pencil-fill"> </i>
         </button>
       </div>
+      
       <br /><br />
     </div>
-
+  </div>
+    <div class="row2">
     <div class="acercademi">
       <div class="encabezado">
-        <h2>Acerca de mí</h2>
+        <h2>Acerca de mí  </h2>
+        <div class="icono" >
+          <!-- <i class="fa-solid fa-person" style="color: rgb(0, 53, 142)"></i> -->
+          <i class="fa-solid fa-person" style="color: #044cb8"></i>
+        </div>
+        
         
       </div>
       <div class="col-sm-1 col-md-1 col-lg-1"></div>
@@ -42,10 +49,10 @@
         <table class="table">
           <tbody>
             <tr>
-              <td class="separador"></td>
+              
               <td class="descripcion">
                 <span>
-                  <p>{{ persona.descripcion }}</p>
+                  <p>{{ persona?.descripcion }}</p>
                 </span>
               </td>
               <td class="separador2"></td>

@@ -1,29 +1,38 @@
 <section class="gradient-custom">
 <div class="row">
-  <div class="encabezado">
-    <h2>Hard & Soft skills</h2>
-    <div class="col-sm-2 col-md-2 col-lg-2">
+  <div class="col-sm-12 col-md-12 col-lg-12 encabezado">
+    <div class="icono">
+      <h2>Hard & Soft Skills</h2>
+      <i class="fa-solid fa-gears" style="color: #044cb8"></i> 
+    </div>
+    
+    
+    <div class="btnadd">
       <button
         type="button"
         class="btn btn-primary"
         routerLink="/newskill"
-        *ngIf="isLogged"
-      >
-        <i class="bi bi-plus-lg"></i>
+        *ngIf="isLogged" >
+        <i class="bi bi-plus-circle"></i>
       </button>
     </div>
   </div>
+  <br>
 <div class="container">
   <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo"
     *ngFor="let skill of skill" >
+    <div class="nombre">
+    <p>{{skill.nombre}}</p>
+  </div>
     <circle-progress
       [percent]="skill.porcentaje"
-      [showUnits]="false"
+      [showUnits]="true"
       [showSubtitle]="false"
       [radius]="70"
       [imageSrc]="''"
       [titleColor]="'#35221d'"
-      [title]="skill.nombre" 
+      [title]= ''
+      [titleFontSize]="'30'"
       [subtitle]=""
       [showTitle]="true"
       [showImage]="false"
@@ -48,6 +57,7 @@
         </button>
       </td>
     </div>
+    <br><br>
   </div>
 </div>
 

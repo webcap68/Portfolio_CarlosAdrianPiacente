@@ -1,5 +1,19 @@
-/*app-acerca-de{
+/* fue lo primero que se hizo cuando comenzo todo
+  app-acerca-de{
     border-radius: 5%;
     border: 5px;
     
 }*/
+.gradient-custom {
+      background: -webkit-linear-gradient(
+      to right,
+      rgb(170, 208, 247),
+      rgb(77, 140, 248)
+    );
+  
+    background: linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248));
+  }
+  
+  html{
+    scroll-behavior: smooth;
+}

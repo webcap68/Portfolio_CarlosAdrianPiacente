@@ -1,48 +1,60 @@
-<section class="gradient-custom">
-<div class="row">
-  <div class="encabezado">
-    <h2>Experiencia Laboral</h2>
-    <div class="col-sm-2 col-md-2 col-lg-2">
-      <button
-        type="button"
-        class="btn btn-primary"
-        routerLink="/nuevaexp"
-        *ngIf="isLogged"
-      >
-        <i class="bi bi-plus-lg"></i>
-      </button>
+<section class="gradient-custom" id="experiencia">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 encabezado">      
+      <div class="icono">
+        <h2>Experiencia Laboral</h2>
+        <i class="fa-solid fa-briefcase" style="color: #044cb8"></i>
+      </div>
+      <div class="btnadd">
+        <button
+          type="button"
+          class="btn btn-primary"
+          routerLink="/nuevaexp"
+          *ngIf="isLogged"
+        >
+          <i class="bi bi-plus-circle"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1"></div>
+    <div class="col-sm-11 col-md-11 col-lg-11">
+      <table class="table">
+        <tbody
+          style="border-color: rgb(0, 53, 142)"
+          *ngFor="let Experiencia of expe"
+        >
+          <tr>
+            <td class="expNombre">
+              {{ Experiencia.descripcionE }}
+            </td>
+            <td *ngIf="isLogged" class="expEdit">
+              <button
+                class="btn btn-light"
+                routerLink="/editexp/{{ Experiencia.id }}"
+              >
+                <i class="bi bi-pencil-fill"></i>
+              </button>
+            </td>
+            <td *ngIf="isLogged" class="expBorrar">
+              <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="expPeriodo">
+              <p class="nombreE">{{ Experiencia.nombreE }}</p>
+              {{ Experiencia.inicio }} - {{ Experiencia.fin }}
+            </td>
+          </tr>
+          <!-- <tr>
+            <td class="expDescripcion">
+              {{ Experiencia.descripcionE }}
+            
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
     </div>
   </div>
-  <div class="col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-sm-11 col-md-11 col-lg-11">
-    <table class="table">
-      <tbody>
-        <tr *ngFor="let Experiencia of expe">
-          <td class="expNombre">
-            <h5>{{ Experiencia.nombreE }}</h5>
-          </td>
-          <td class="expPeriodo">
-            <h6>{{ Experiencia.inicio }} - {{ Experiencia.fin }}</h6>
-          </td>
-          <td class="separador"></td>
-          <td class="expDescripcion">{{ Experiencia.descripcionE }}</td>
-          <td *ngIf="isLogged" class="expEdit">
-            <button
-              class="btn btn-light"
-              routerLink="/editexp/{{ Experiencia.id }}"
-            >
-              <i class="bi bi-pencil-fill"></i>
-            </button>
-          </td>
-          <td *ngIf="isLogged" class="expBorrar">
-            <button class="btn btn-danger" (click)="delete(Experiencia.id)">
-              <i class="bi bi-trash-fill"></i>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 </section>
-  

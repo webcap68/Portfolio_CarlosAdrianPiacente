@@ -8,74 +8,147 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    background: linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248)) 
    } 
-
+   section{
+  
+     width: 99.5%;
+   }
+ 
 .row {
   padding: 20px;
- 
-    border-style: none;
+  position:relative;
+  width: 99%;
+  border-radius: 100%;
+  box-shadow: 5px 5px 17px 2px rgb(0, 3, 46);
+  border-style:solid;
+  border-color: #044cb8;
+  left: 1.35em;
+  border-width:2px;
+  border-radius: 1rem;
+  background-color: lightblue;
 }
 
-td{
-  
-  border-style:none;
-  /* border-color: #044cb8; */
-}
-div {
-  /*background-color: rgb(198, 213, 228);*/
-  /* background-color: rgb(170, 208, 247); */
-  
+
+.btn-light {
+  --bs-btn-bg: none;
+  --bs-btn-border-color: none;
+  --bs-btn-color: rgb(0, 53, 142);
+  --bs-btn-hover-color: #fa0404;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
 }
 
-h2,
-h3 {
+.btn-danger {
+  --bs-btn-bg: none;
+  --bs-btn-border-color: none;
+  --bs-btn-color: rgb(0, 53, 142);
+  --bs-btn-hover-color: #fa0404;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+}
+
+.btn-primary {
+  --bs-btn-bg: none;
+  --bs-btn-border-color: none;
+  --bs-btn-color: rgb(0, 53, 142);
+  --bs-btn-hover-color: #fa0404;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+}
+
+.btn {
+  --bs-btn-font-size: 1.1rem;
+}
+
+ td{
+  border-style: none;
+ }
+
+table{
+   border-style: none;
+  }
+
+
+h2 {
   display: inline;
-  color: #0459da;
+  color: rgb(0, 53, 142);
 }
 
-.encabezado {
-  display: flex;
-}
+
 
 
 
 @media (min-width: 576px) {
-  .fila {
-    display: flex;
-    /* align-items por defecto tiene el valor `stretch` */
-    align-items: flex-start;
+  .encabezado {
+    display:inline-flex;
+    width: 100%;
+    justify-content: space-between;
   }
+
+  .icono{
+    
+    text-align: left;
+  }
+  .fa-book{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size:   1.5em;
+  }
+ 
+
+  .btnadd {
+    
+    /* display: inline-block; */
+    position: relative;
+    text-align: right;
+  }
+
+
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
   .eduNombre {
-    width: 25%;
-    color:rgb(47, 3, 78)
+    width: 50%;
+    color:rgb(47, 3, 78);
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 0;
   }
-  
 
   .eduPeriodo {
-    width: 15%;
     color:rgb(47, 3, 78);
-  }
-
-  
-  .separador {
-    width: 5%;
+    font-size: 1em;
   }
 
   
   .eduDescripcion {
-    width: 45%;
+    width: 90%;
     color:rgb(47, 3, 78);
+    font-size: 1em;
   
   }
 
-
   .eduEdit {
+    padding-top: 0;
+    padding-bottom: 0;
     width: 5%;
   }
 
- 
-  .eduBorrar {
+   .eduBorrar {
+    padding-top: 0;
+    padding-bottom: 0;
     width: 5%;
   }
+
+  .nombreE{
+    font-size: 1.2em;
+  }
+ 
 
 }
 

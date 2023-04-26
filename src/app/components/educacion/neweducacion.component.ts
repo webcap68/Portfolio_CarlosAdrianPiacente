@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+//import { SwitchService } from 'src/app/service/switch.service';
 
 @Component({
   selector: 'app-neweducacion',
@@ -18,11 +20,14 @@ export class NeweducacionComponent implements OnInit {
     fin: new FormControl('')
   });
   submitted : boolean = false;
+  mensaje : string ;
 
   constructor(private educacionS: EducacionService,
   private router: Router,
   private activatedRouter : ActivatedRoute,
-  private formBuilder : FormBuilder) { }
+  private formBuilder : FormBuilder,
+  private Ref: MatDialogRef<NeweducacionComponent>
+  ) { }
 
   ngOnInit(): void {
     this.form=this.formBuilder.group({
@@ -32,6 +37,8 @@ export class NeweducacionComponent implements OnInit {
       descripcionE:['',[Validators.required,Validators.maxLength(255)]]
     })
   }
+
+  
 
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
@@ -85,14 +92,16 @@ export class NeweducacionComponent implements OnInit {
     this.educacionS.save(educacion).subscribe(
       data =>{
         
-      this.router.navigate(['']);
+        this.onClose();
+      //this.router.navigate(['']);
     }, err =>{
       alert("Falló al agregar nueva educacion");
-      this.router.navigate(['']);
+      //this.router.navigate(['']);
     }
     )
   }
 }
+
 
 onReset(){
   this.form.reset();
@@ -101,6 +110,6 @@ onReset(){
 }
 
 onClose(){
-  this.router.navigate(['']);
+  this.Ref.close();
 }
 }

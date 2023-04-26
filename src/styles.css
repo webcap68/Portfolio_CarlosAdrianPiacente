@@ -1,16 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    margin:0px;
-    padding:0px;
-    /*box-sizing: border-box;*/
-}
+ /* ::-webkit-scrollbar {
+    display: none;
+}  */
 
+
+
+
+
+
+html, body { 
+    
+    box-sizing: border-box;
+    font-family: "Roboto","PT Sans","Helvetica Neue";  
+    height:100%;
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+  
+}
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 html{
     scroll-behavior: smooth;
-}
-
-body {
-    
-    font-family: "PT Sans";
 }
 

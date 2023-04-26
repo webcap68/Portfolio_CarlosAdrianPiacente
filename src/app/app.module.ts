@@ -31,7 +31,8 @@ import { EditbannerComponent } from './components/banner/editbanner.component';
 import { NewproyectoComponent } from './components/proyecto/newproyecto.component';
 import { EditproyectoComponent } from './components/proyecto/editproyecto.component';
 import { SobremiComponent } from './components/acerca-de/sobremi.component';
-import { ModalneweducacionComponent } from './components/modalneweducacion/modalneweducacion.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from 'src/Material-Module';
 
 
 
@@ -60,7 +61,8 @@ import { ModalneweducacionComponent } from './components/modalneweducacion/modal
     NewproyectoComponent,
     EditproyectoComponent,
 SobremiComponent,
-ModalneweducacionComponent
+
+
     ],
   imports: [
     BrowserModule,
@@ -70,7 +72,9 @@ ModalneweducacionComponent
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     interceptorProvider

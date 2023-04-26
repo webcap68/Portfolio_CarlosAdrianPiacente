@@ -12,25 +12,119 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248));
 }
+section{
+  /* border-color: rgb(192, 223, 13);
+  border-style:solid;   */
+  width: 99.5%;
+}
 
-table {
-  /* border-color: rgb(170, 208, 247); */
-  border-style: none;
+td{
+  border:none;
+}
+
+table{
+  margin-left: 2px;
   
 }
 
-td {
-  /* border-color: rgb(170, 208, 247); */
-  border-style: none;
+.row2{
+  position:relative;
+  width: 99%;
+  border-radius: 100%;
+  box-shadow: 5px 5px 17px 2px rgb(0, 3, 46);
+  border-style:solid;
+  border-color: #044cb8;
+  left: .5em;
+  border-width:2px;
+  border-radius: 1rem;
+  background-color: lightblue;
 }
+.btn-light {
+  --bs-btn-bg: none;
+  --bs-btn-border-color:none;
+  --bs-btn-color:rgb(0,53,142);
+  --bs-btn-hover-color: #fa0404;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+}
+
+.btn{
+  --bs-btn-font-size: 1.1rem;
+}
+
 p {
     color: rgb(47, 3, 78);
   }
+  
+  .datospersona {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  div {
+    /* background-color:rgb(170, 208, 247); */
+    /*background-color: rgb(198, 213, 228);*/
+    text-align: center;
+  }
+  .row {
+    position:relative;
+    width: 99%;
+   
+  }
+  .foto {
+    /* position: relative;*/
+    margin-top: -6%;
+    margin-left: 7%;
+  }
+  
+  h2,
+  h3 {
+    display: inline;
+    /* color: #0459da; */
+    color: rgb(0, 53, 142);
+    
+  }
+  
+  .encabezado {
+    display: flex;
+    margin-left: 22px;
+  }
+  .acercademi {
+    padding: 10px;
+  }
+
+  #nombre {
+    font-weight: normal;
+    color: #0704da;
+  }
+  
+  #titulo {
+    font-weight: normal;
+    color: rgb(47, 3, 78);
+  }
+  
+  .mail {
+    color: rgb(47, 3, 78);
+  }
+  a:link {
+    text-decoration: none;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  
+  
 
 @media (min-width: 576px) {
+
+  h2,h3{
+    font-size: 1.8em;
+  }
+
   #fotodeperfil {
     /*position: absolute;*/
-    width: 90%;
+    width: 100%;
     border-radius: 100%;
     box-shadow: 5px 5px 5px rgb(94, 93, 93);
     /*left: 3%;
@@ -40,11 +134,12 @@ p {
     position: relative;
     width: 85%;
     background-color:lightblue;
-    border-style: none;
+    border-style:none;
     border-color: #044cb8;
-    left: 5rem;
-    border-width: thick;
+    left: 4rem;
+    border-width:thin;
     border-radius: 1rem;
+    text-align: justify;
    
   }
   .separador2 {
@@ -61,11 +156,19 @@ p {
 
   .botoneditarAcerca {
     position: relative;
-    left: 2.5rem;
+     left: 1.3rem; 
     width:1%;
+    
   }
   .botoneditarNombre {
     text-align: left;
+    margin-left: 5px;
+  }
+
+  .icono{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size:   1.5em;
   }
 }
 @media (max-width: 575px) {
@@ -99,73 +202,4 @@ p {
     border-radius: 1rem;
     color: rgb(47, 3, 78);
   }
-}
-.datospersona {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
-
-div {
-  /* background-color:rgb(170, 208, 247); */
-  /*background-color: rgb(198, 213, 228);*/
-  text-align: center;
-}
-.row {
-  width: 100%;
-  position: relative;
-  /* padding: 20px; */
-  border-style: none;
-  /*background-color: #25477a; */
-  /* border-color: #044cb8;
-    left: 5rem;
-    border-width:thick;
-    border-radius:1rem ; */
-}
-.foto {
-  /* position: relative;*/
-  margin-top: -6%;
-  margin-left: 7%;
-}
-
-h2,
-h3 {
-  display: inline;
-  color: #0459da;
-}
-
-.encabezado {
-  display: flex;
-}
-.acercademi {
- 
-  padding: 10px;
-  margin-left: 22px;
-  /* border-style: solid;
-    border-width: thin;
-    border-radius:2rem ;
-    border-color: #044cb8; */
-}
-#nombre {
-  font-weight: normal;
-  color: #0704da;
-}
-
-#titulo {
-  font-weight: normal;
-  color: rgb(47, 3, 78);
-}
-
-.mail {
-  color: rgb(47, 3, 78);
-}
-a:link {
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-}
-
-h2 {
-  color: #0459da;
 }

@@ -1,52 +1,113 @@
 .gradient-custom {
-    /* fallback for old browsers */
-    /* background: #6a11cb; */
-    
-    /* Chrome 10-25, Safari 5.1-6 */
-     background: -webkit-linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248)); 
-    
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-     background: linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248)) 
-     } 
+  /* fallback for old browsers */
+  /* background: #6a11cb; */
 
-.row{
-    padding: 20px;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(170, 208, 247),
+    rgb(77, 140, 248)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(170, 208, 247), rgb(77, 140, 248));
+}
+section {
+
+  width: 99.5%;
 }
 
-/* div{
-   
-    background-color:rgb(170, 208, 247);
-    
-} */
-.circulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-.botonera{
-    flex-direction: row;
-    align-items: center;
+.row {
+  position:relative;
+  padding: 20px;
+  width: 99%;
+  border-radius: 100%;
+  box-shadow: 5px 5px 17px 2px rgb(0, 3, 46);
+  border-style: solid;
+  border-color: #044cb8;
+  left: 1.35em;
+  border-width: 2px;
+  border-radius: 1rem;
+  background-color: lightblue;
 }
 
-h2,h3{
-    display: inline;
-    color: #0459da;
-    /* color: #bc2121 */
+.btn-light {
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+    --bs-btn-color: rgb(0, 53, 142);
+    --bs-btn-hover-color: #fa0404;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+  }
+  
+  .btn-danger {
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+    --bs-btn-color: rgb(0, 53, 142);
+    --bs-btn-hover-color: #fa0404;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+  }
+  
+  .btn-primary {
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+    --bs-btn-color: rgb(0, 53, 142);
+    --bs-btn-hover-color: #fa0404;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+  }
+  .btn {
+    --bs-btn-font-size: 1.1rem;
+  }
+
+  .encabezado {
+    display:inline-flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+ 
+  .fa-gears{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size:   1.5em;
+  }
+ 
+
+  .btnadd {
+    
+    /* display: inline-block; */
+    position: relative;
+    text-align: right;
+  }
+
+.circulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.botonera {
+  flex-direction: row;
+  align-items: center;
 }
 
-.encabezado{
-    display: flex;
-    
-    
+
+h2 {
+  display: inline;
+  color: rgb(0, 53, 142);
+  font-size: 1.8em;
 }
 
-.container{
-   
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        
-   
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nombre{
+    color: rgb(47, 3, 78);
+    font-size: 1.5em;
 }

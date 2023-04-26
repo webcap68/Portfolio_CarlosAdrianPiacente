@@ -1,15 +1,12 @@
-<div class="row" *ngIf="banner">
-    
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner">
-        <!--<img src="../../../assets/banner.png" class="img-fluid">-->
-        <img src={{banner?.url_fotoB}}  class="img-fluid" id="">
-        
-        <p class="portada-fluid"></p>
-    </div>
-    <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 botoneditar">
-        <button type="button" class="btn btn-light" routerLink="/editbanner/1" *ngIf="isLogged" >
+
+<div class="banner" *ngIf="banner"> 
+  
+        <img  src={{banner?.url_fotoB}}  class="img-fluid">
+        <button type="button" class="btn btn-light botoneditar" routerLink="/editbanner/1" *ngIf="isLogged" >
             <i class="bi bi-pencil-fill"> </i>
         </button>
-    </div>
+     
+        <!-- <p class="portada-fluid"></p> -->
+  
     
-</div>
+</div> 
