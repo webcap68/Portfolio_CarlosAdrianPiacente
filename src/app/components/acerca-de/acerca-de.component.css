@@ -78,17 +78,23 @@ p {
     margin-left: 7%;
   }
   
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
   h2,
   h3 {
     display: inline;
-    /* color: #0459da; */
-    color: rgb(0, 53, 142);
-    
+     
   }
   
   .encabezado {
     display: flex;
     margin-left: 22px;
+    color: rgb(0, 53, 142);
   }
   .acercademi {
     padding: 10px;
@@ -97,11 +103,13 @@ p {
   #nombre {
     font-weight: normal;
     color: #0704da;
+    
   }
   
   #titulo {
     font-weight: normal;
     color: rgb(47, 3, 78);
+    
   }
   
   .mail {
@@ -118,9 +126,9 @@ p {
 
 @media (min-width: 576px) {
 
-  h2,h3{
+  /* h2,h3{
     font-size: 1.8em;
-  }
+  } */
 
   #fotodeperfil {
     /*position: absolute;*/

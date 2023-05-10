@@ -10,7 +10,7 @@
           type="button"
           class="btn btn-primary"
           *ngIf="isLogged"
-          (click)="NuevaEdu()"
+          (click)="nuevaEdu()"
         >
           <i class="bi bi-plus-circle"></i>
         </button>
@@ -30,9 +30,10 @@
             </td>
             <td *ngIf="isLogged" class="eduEdit">
               <button
-                class="btn btn-light"
-                routerLink="/editedu/{{ Educacion.id }}"
-              >
+              type="button"
+              (click)="editEdu(Educacion.id)"
+                class="btn btn-light"     >
+               <!-- routerLink="/editedu/{{ Educacion.id }}" -->
                 <i class="bi bi-pencil-fill"></i>
               </button>
             </td>

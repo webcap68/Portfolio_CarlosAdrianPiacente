@@ -35,6 +35,9 @@
   --bs-btn-hover-color: #fa0404;
   --bs-btn-hover-bg: none;
   --bs-btn-hover-border-color: none;
+  --bs-btn-disabled-border-color: none;
+  --bs-btn-active-border-color: none;
+    --bs-btn-active-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
 }
 
 .btn-danger {
@@ -48,15 +51,22 @@
 
 .btn-primary {
   --bs-btn-bg: none;
-  --bs-btn-border-color: none;
+  --bs-btn-border-color:lightblue;
   --bs-btn-color: rgb(0, 53, 142);
   --bs-btn-hover-color: #fa0404;
   --bs-btn-hover-bg: none;
   --bs-btn-hover-border-color: none;
+  --bs-btn-disabled-border-color: none;
+  --bs-btn-active-border-color: none;
+  --bs-btn-active-shadow: inset 0 0px 0px rgba(0, 0, 0, 0);
+  --bs-btn-border-width: 0px;
+  --bs-btn-focus-box-shadow:0;
+  --bs-btn-active-box-shadow:       inset 0 0 0px rgba($black, 0);
 }
 
 .btn {
   --bs-btn-font-size: 1.1rem;
+  
 }
 
  td{

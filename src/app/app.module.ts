@@ -33,6 +33,8 @@ import { EditproyectoComponent } from './components/proyecto/editproyecto.compon
 import { SobremiComponent } from './components/acerca-de/sobremi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/Material-Module';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 
@@ -74,7 +76,8 @@ SobremiComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatSnackBarModule
   ],
   providers: [
     interceptorProvider

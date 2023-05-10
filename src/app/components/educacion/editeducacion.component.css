@@ -1,49 +1,48 @@
-
-
-label{
-    font-size: 1.1em;
-    color:midnightblue;
+label {
+  font-size: small;
+  color: midnightblue;
+  text-align: left;
 }
 
-
-.botones{
-    
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-
+.botones {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  bottom:-10px ;
+}
+.form-container {
+  background-color: rgb(170, 208, 247);
+  border-style: solid;
+  border-color: rgb(7, 4, 180);
+  width: 99.9%;
+  height: 100%;
 }
 
-form{
-    background-color: rgb(170, 208, 247);
-   
-}
-h3{
-    text-align: center;
-    color:rgb(255, 255, 255);
+.falsologo {
+  opacity: 100%;
+  color: white;
 }
 
-button{
-    width:25%;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: #0d6efd;
+  width: 100%;
 }
 
-.form-control{
-    margin:0px auto;
-    width: 75%;
-    
+.portada-fluid {
+  font-size: 1.1rem;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#logoAP {
+  width: 80px;
+  height: 40px;
+}
+input {
+  height: 30px;
+  font-size: 1em;
 }
 
-.form-outline{
-    
-    flex-wrap:wrap;
-}
-
- .card-header{
-    display: flex;
-    justify-content: flex-end;
-    /* align-items: flex-start;  */
-  } 
-
-  .btn-close-white{
-    text-align: right;
-  }
